@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 220 20% 6%;
+  --foreground: 40 10% 90%;
+  --primary: 32 95% 55%;
+  --primary-foreground: 220 20% 6%;
+  --secondary: 220 15% 14%;
+  --secondary-foreground: 40 10% 90%;
+  --muted: 220 15% 18%;
+  --muted-foreground: 220 10% 55%;
+  --accent: 32 80% 45%;
+  --accent-foreground: 40 10% 95%;
+  --card: 220 18% 10%;
+  --card-foreground: 40 10% 90%;
+  --border: 220 15% 18%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  overflow-x: hidden;
+}
+
+::selection {
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+@layer utilities {
+  .card-glass {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(32 100% 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glow {
+    box-shadow: 0 0 30px -5px hsl(var(--primary) / 0.3);
+  }
+}
